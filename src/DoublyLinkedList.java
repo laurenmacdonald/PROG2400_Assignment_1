@@ -142,6 +142,28 @@ public class DoublyLinkedList<T> {
             return tail.data;
         }
     }
+    /**
+     * Removes the last element from the list
+     */
+    public void pop(){
+        // Check to see if list is empty
+        if(!isEmpty()){
+            // If there is only one element, make the head the tail and make it null (no elements in list)
+            if(head == tail) {
+                head = tail = null;
+                return;
+            }
+            // If more than one element, update the tail to the second to last index and set the next to null
+            Node<T> secondLast = head;
+            while(secondLast.next != tail){
+                secondLast = secondLast.next;
+            }
+            // Remove the last node by setting the next of second last to null
+            secondLast.next = null;
+            // Update the tail to the new last node
+            tail = secondLast;
+        }
+    }
 
     /**
      *
@@ -169,28 +191,7 @@ public class DoublyLinkedList<T> {
         return null;
     }
 
-    /**
-     * Removes the last element from the list
-     */
-    public void pop(){
-        // Check to see if list is empty
-        if(!isEmpty()){
-            // If there is only one element, make the head the tail and make it null (no elements in list)
-            if(head == tail) {
-                head = tail = null;
-                return;
-            }
-            // If more than one element, update the tail to the second to last index and set the next to null
-            Node<T> secondLast = head;
-            while(secondLast.next != tail){
-                secondLast = secondLast.next;
-            }
-            // Remove the last node by setting the next of second last to null
-            secondLast.next = null;
-            // Update the tail to the new last node
-            tail = secondLast;
-        }
-    }
+
 
     /**
      *
