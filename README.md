@@ -46,4 +46,5 @@
 ## Example of Program Output
 This example uses a DoublyLinkedList of type Object to allow for different data types in the list. The list could be
 of any type.
+
 ![img_6.png](Documentation/output.png)
